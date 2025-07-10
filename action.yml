@@ -1,0 +1,21 @@
+name: "YAML to JSON Schema"
+description: "Generate JSON Schema from YAML values."
+inputs:
+  destinationDir:
+    description: "Directory where to store the generated JSON Schema"
+    required: false
+    default: "schema"
+  yamlFile:
+    description: "The source YAML file for JSON Schema generation"
+    required: false
+    default: "values.yaml"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    YAMLFILE: ${{ inputs.yamlFile }}
+    DESTINATIONDIR: ${{ inputs.destinationDir }}
+
+branding:
+  icon: "activity"
+  color: "orange"
