@@ -4,11 +4,9 @@ inputs:
   destinationDir:
     description: "Directory where to store the generated JSON Schema"
     required: false
-    default: "schema"
   yamlFile:
     description: "The source YAML file for JSON Schema generation"
-    required: false
-    default: "values.yaml"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
